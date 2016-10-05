@@ -7,8 +7,8 @@ def copyFile = { src,dst ->
     println "copied $src to $dst"
 }
 
-def basePath = '/Users/Paul/Documents/Source/E1C'
-def pluginsPath = "$basePath/plugins-paul"
+def basePath = '/Users/pbartlett/Documents/Source'
+def pluginsPath = "$basePath/plugins"
 def ecModulesPath = "$pluginsPath/ec-modules"
 def adminPath = "$basePath/elect-admin-paul"
 def tomcatPath = '/Library/Tomcat'
@@ -26,6 +26,8 @@ def webModules = ['admin-ws',
                   'elect-reporting-ws',
                   'storage-ws',
                   'voter-mgmt-ws']
+
+println "rm -rf $webappsPath/*".execute().text
 
 // This will deploy admin to my tomcat webapps
 
